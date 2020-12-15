@@ -9,6 +9,7 @@ import Hello from './components/hello'
 ReactDOM.render(
   <React.StrictMode>
     <Hello fname="Arshia" lname="Hsn"/>
+    <Hello fname="Soh" lname="Zan"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
