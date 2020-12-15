@@ -8,7 +8,7 @@ import Hello from './components/hello'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hello name="Arshia"/>
+    <Hello fname="Arshia" lname="Hsn"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
