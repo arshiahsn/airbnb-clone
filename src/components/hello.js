@@ -3,7 +3,7 @@ import React from "react";
 class Hello extends React.Component {
     render () {
         // TODO: Generates HTML
-        return <div>Hello from hello.js</div>
+    return <div>Hello {this.props.name}</div>
     }
 }
 

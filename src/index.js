@@ -8,7 +8,7 @@ import Hello from './components/hello'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hello />
+    <Hello name="Arshia"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
