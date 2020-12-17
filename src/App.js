@@ -5,8 +5,8 @@ class App extends React.Component {
     render () {
         const flat = {
             "name":"something",
-            "flatURL":"www.something.com",
-            "flatPrice":"100",
+            "imageUrl":"https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-twilight-picture-id1026205392",
+            "price":"100",
             "priceCurrency":"euro"
         }
         return <div >
