@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Flat from "./components/flat.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    render () {
+        const flat = {
+            "name":"something",
+            "flatURL":"www.something.com",
+            "flatPrice":"100",
+            "priceCurrency":"euro"
+        }
+        return <div >
+            <Flat flat={flat} />
+            </div>
+    }
 }
 
 export default App;
