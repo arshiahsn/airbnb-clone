@@ -3,7 +3,7 @@ import "./flat.css";
 
 class Flat extends React.Component {
     render () {
-    const title = this.props.flat.name + this.props.flat.priceCurrency + "-" + this.props.flat.price;
+    const title = this.props.flat.name +" "+this.props.flat.priceCurrency + this.props.flat.price;
     const style = {
         backgroundImage: `url('${this.props.flat.imageUrl}')`
     };
