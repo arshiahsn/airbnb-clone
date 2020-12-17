@@ -13,10 +13,7 @@ class Flat extends React.Component {
 
     <div className="flat">
         <div className="flat-picture" style={style}></div>
-        <div className="flat-title">
-            {this.props.title}
-        </div>
-    
+        <div className="flat-title">{title}</div>
     </div>
     );
     }
