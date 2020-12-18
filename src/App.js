@@ -20,16 +20,27 @@ class App extends React.Component {
         .then(response => response.json())
         .then(data => {
             this.setState({
-                flats: data
+                flats: data,
+                selectedFlat: null
             })
         })
     }
 
+    selectFlat = (flat) => {
+        this.setState({
+            selectedFlat: flat
+        })
+    }
 
     render () {
-        const center = {
+        let center = {
             lat: 48.8566,
             lng: 2.3522
+        }
+
+        if(this.state.selectedFlat){
+            center.lat = this.state.selectedFlat.lat,
+            center.lng = this.state.selectedFlat.lng
         }
 
         const flat = {
@@ -40,7 +51,7 @@ class App extends React.Component {
             "lat":"48.88",
             "lng": "2.44"
         }
-        
+
         
         return (
             <div className="app">
@@ -48,13 +59,13 @@ class App extends React.Component {
                     <div className="search">
                     </div>
                     <div className="flats">
-                        {this.state.flats.map((flat) => { return <Flat flat={flat} />})}
+                        {this.state.flats.map((flat) => { return <Flat key = {flat.name} flat={flat} selectFlat={selectFlat}/>})}
                     </div>
                     <div className="map">
                         <GoogleMapsReact
                             defaultCenter = {center}
                             defaultZoom = {11} >
-                            {this.state.flats.map((flat) => { return <Marker lat={flat.lat} lng={flat.lng} text={flat.price} />})}
+                            {this.state.flats.map((flat) => { return <Marker key={flat.name} lat={flat.lat} lng={flat.lng} text={flat.price} />})}
                         </GoogleMapsReact>
                     </div>
                 </div>
