@@ -3,6 +3,14 @@ import Flat from "./components/flat.js"
 import "./App.css"
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            flats: []
+        
+        };
+        
+    }
     render () {
         const flat = {
             "name":"Some Flat",
@@ -12,6 +20,7 @@ class App extends React.Component {
             "lat":"48.88",
             "lng": "2.44"
         }
+        
         const flats = [flat, flat, flat];
         return (
             <div className="app">
@@ -19,7 +28,7 @@ class App extends React.Component {
                     <div className="search">
                     </div>
                     <div className="flats">
-                        {flats.map((flat) => { return <Flat flat={flat} />})}
+                        {this.state.flats.map((flat) => { return <Flat flat={flat} />})}
                     </div>
                     <div className="map">
                     </div>
