@@ -11,6 +11,17 @@ class App extends React.Component {
         };
         
     }
+    componentDidMount() {
+        const url_ ="https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json";
+        fetch(url_)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                flats: data
+            })
+        })
+    }
+
     render () {
         const flat = {
             "name":"Some Flat",
@@ -21,7 +32,7 @@ class App extends React.Component {
             "lng": "2.44"
         }
         
-        const flats = [flat, flat, flat];
+        
         return (
             <div className="app">
                 <div className="main">
