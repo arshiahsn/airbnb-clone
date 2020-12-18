@@ -1,6 +1,7 @@
 import React from "react";
-import Flat from "./components/flat.js"
-import "./App.css"
+import Flat from "./components/flat.js";
+import "./App.css";
+import GoogleMapsReact from 'google-map-react';
 
 class App extends React.Component {
     constructor(props){
@@ -22,7 +23,13 @@ class App extends React.Component {
         })
     }
 
+
     render () {
+        const center = {
+            lat: 48.8566,
+            lng: 2.3522
+        }
+
         const flat = {
             "name":"Some Flat",
             "imageUrl":"https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-twilight-picture-id1026205392",
@@ -42,6 +49,10 @@ class App extends React.Component {
                         {this.state.flats.map((flat) => { return <Flat flat={flat} />})}
                     </div>
                     <div className="map">
+                        <GoogleMapsReact
+                            defaultCenter = {center}
+                            defaultZoom = {11} >
+                        </GoogleMapsReact>
                     </div>
                 </div>
             </div>
