@@ -1,7 +1,9 @@
 import React from "react";
-import Flat from "./components/flat.js";
+import Flat from "./components/flat";
 import "./App.css";
 import GoogleMapsReact from 'google-map-react';
+import Marker from './components/marker';
+
 
 class App extends React.Component {
     constructor(props){
@@ -52,6 +54,7 @@ class App extends React.Component {
                         <GoogleMapsReact
                             defaultCenter = {center}
                             defaultZoom = {11} >
+                            {this.state.flats.map((flat) => { return <Marker lat={flat.lat} lng={flat.lng} text={flat.price} />})}
                         </GoogleMapsReact>
                     </div>
                 </div>

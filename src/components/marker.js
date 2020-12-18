@@ -1,8 +1,13 @@
 import React from "react";
+import './marker.css';
 
-class Marker extends Component {
+class Marker extends React.Component {
     render(){
-        return //
+        return (
+            <div className="marker">
+                {this.props.text}
+            </div>
+        );
 
     }
 
