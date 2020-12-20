@@ -4,8 +4,8 @@ import "./flat.css";
 class Flat extends React.Component {
 
     handleClick = () => {
-        //
         this.props.selectFlat(this.props.flat);
+
     }
     render () {
     const title = this.props.flat.name +" "+this.props.flat.priceCurrency + this.props.flat.price;

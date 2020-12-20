@@ -9,8 +9,10 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            flats: []
-        
+            flats: [],
+            selectedFlat: null,
+            search: ""
+            
         };
         
     }
@@ -29,6 +31,13 @@ class App extends React.Component {
     selectFlat = (flat) => {
         this.setState({
             selectedFlat: flat
+        })
+    }
+
+    handleSearch = (event) => {
+        this.setState({
+            search: event.value,
+            flats: this.state.flats.filter((flat) => new RegExp(event.value,"i").exec(flat))
         })
     }
 
@@ -62,6 +71,11 @@ class App extends React.Component {
             <div className="app">
                 <div className="main">
                     <div className="search">
+                        <input
+                        type="text"
+                        placeholder="Search..."
+                        value={this.state.search}
+                        onChange={this.handleSearch} />
                     </div>
                     <div className="flats">
                         {this.state.flats.map((flat) => { return <Flat key = {flat.name} flat={flat} selectFlat={this.selectFlat}/>})}
