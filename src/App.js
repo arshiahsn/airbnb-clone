@@ -70,7 +70,7 @@ class App extends React.Component {
                         <GoogleMapsReact
                             defaultCenter = {center}
                             defaultZoom = {13} >
-                            {this.state.flats.map((flat) => { return <Marker key={flat.name} lat={flat.lat} lng={flat.lng} text={flat.price} />})}
+                            {this.state.flats.map((flat) => { return <Marker key={flat.name} lat={flat.lat} lng={flat.lng} text={flat.price} selected={flat === this.state.selectedFlat}/>})}
                         </GoogleMapsReact>
                     </div>
                 </div>
